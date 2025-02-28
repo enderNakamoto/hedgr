@@ -5,9 +5,9 @@ require('dotenv').config();
 
 declare const _STD_: any;
 
-const FROM_CURRENCY =  "TRY";
-const TO_CURRENCY = "USD";
-const AMOUNT = 1000;
+const FROM_CURRENCY =  "USD";
+const TO_CURRENCY = "AED";
+const AMOUNT = 1;
 
 if (typeof _STD_ === "undefined") {
   // If _STD_ is not defined, we know it's not running in the Acurast Cloud.
