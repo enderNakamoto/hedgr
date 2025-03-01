@@ -33,9 +33,12 @@ type Market = {
   strikePrice: number;
   event: string;
   contractAddress: string;
+  factoryAddress: string;
+  controllerAddress: string;
   totalShares: string;
   myShares: string;
   status: string;
+  marketId: number;
 };
 
 const Portfolio = () => {
@@ -256,6 +259,8 @@ const Portfolio = () => {
                 strikePrice: market.StrikePrice,
                 event: market.HedgeEvent,
                 contractAddress: market.HedgeAddress,
+                factoryAddress: market.FactoryAddress,
+                controllerAddress: market.ControllerAddress,
                 totalShares: totalSharesResult.data
                   ? formatUnits(
                       totalSharesResult.data as bigint,
@@ -266,6 +271,7 @@ const Portfolio = () => {
                 status: stateOfMarket.data
                   ? getStatusString(stateOfMarket.data as number)
                   : "",
+                marketId: market.MarketId,
               };
               console.log("Adding hedge position");
               positions.push(hedgePosition);
@@ -301,6 +307,8 @@ const Portfolio = () => {
                 strikePrice: market.StrikePrice,
                 event: market.RiskEvent,
                 contractAddress: market.RiskAddress,
+                factoryAddress: market.FactoryAddress,
+                controllerAddress: market.ControllerAddress,
                 totalShares: totalSharesResult.data
                   ? formatUnits(
                       totalSharesResult.data as bigint,
@@ -311,6 +319,7 @@ const Portfolio = () => {
                 status: stateOfMarket.data
                   ? getStatusString(stateOfMarket.data as number)
                   : "",
+                marketId: market.MarketId,
               };
               console.log("Adding risk position");
               positions.push(riskPosition);
@@ -436,9 +445,18 @@ const Portfolio = () => {
                                         <p>{position.event}</p>
                                       </div>
 
+                                      <div className="text-sm">
+                                        <p className="text-muted-foreground mb-1">
+                                          Market ID:
+                                        </p>
+                                        <p className="font-medium">
+                                          {position.marketId}
+                                        </p>
+                                      </div>
+
                                       <div className="flex items-center gap-1 text-sm">
                                         <span className="text-muted-foreground">
-                                          Contract:
+                                          Vault:
                                         </span>
                                         <a
                                           href={`https://sepolia.etherscan.io/address/${position.contractAddress}`}
@@ -453,6 +471,51 @@ const Portfolio = () => {
                                           ...
                                           {position.contractAddress.substring(
                                             position.contractAddress.length - 4
+                                          )}
+                                          <ExternalLink className="h-3 w-3" />
+                                        </a>
+                                      </div>
+
+                                      <div className="flex items-center gap-1 text-sm">
+                                        <span className="text-muted-foreground">
+                                          Factory:
+                                        </span>
+                                        <a
+                                          href={`https://sepolia.etherscan.io/address/${position.factoryAddress}`}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="flex items-center gap-1 text-primary hover:underline"
+                                        >
+                                          {position.factoryAddress.substring(
+                                            0,
+                                            6
+                                          )}
+                                          ...
+                                          {position.factoryAddress.substring(
+                                            position.factoryAddress.length - 4
+                                          )}
+                                          <ExternalLink className="h-3 w-3" />
+                                        </a>
+                                      </div>
+
+                                      <div className="flex items-center gap-1 text-sm">
+                                        <span className="text-muted-foreground">
+                                          Controller:
+                                        </span>
+                                        <a
+                                          href={`https://sepolia.etherscan.io/address/${position.controllerAddress}`}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="flex items-center gap-1 text-primary hover:underline"
+                                        >
+                                          {position.controllerAddress.substring(
+                                            0,
+                                            6
+                                          )}
+                                          ...
+                                          {position.controllerAddress.substring(
+                                            position.controllerAddress.length -
+                                              4
                                           )}
                                           <ExternalLink className="h-3 w-3" />
                                         </a>
@@ -634,9 +697,17 @@ const Portfolio = () => {
                                         <p>{position.event}</p>
                                       </div>
 
+                                      <div className="text-sm">
+                                        <p className="text-muted-foreground mb-1">
+                                          Market ID:
+                                        </p>
+                                        <p className="font-medium">
+                                          {position.marketId}
+                                        </p>
+                                      </div>
                                       <div className="flex items-center gap-1 text-sm">
                                         <span className="text-muted-foreground">
-                                          Contract:
+                                          Vault:
                                         </span>
                                         <a
                                           href={`https://sepolia.etherscan.io/address/${position.contractAddress}`}
@@ -651,6 +722,51 @@ const Portfolio = () => {
                                           ...
                                           {position.contractAddress.substring(
                                             position.contractAddress.length - 4
+                                          )}
+                                          <ExternalLink className="h-3 w-3" />
+                                        </a>
+                                      </div>
+
+                                      <div className="flex items-center gap-1 text-sm">
+                                        <span className="text-muted-foreground">
+                                          Factory:
+                                        </span>
+                                        <a
+                                          href={`https://sepolia.etherscan.io/address/${position.factoryAddress}`}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="flex items-center gap-1 text-primary hover:underline"
+                                        >
+                                          {position.factoryAddress.substring(
+                                            0,
+                                            6
+                                          )}
+                                          ...
+                                          {position.factoryAddress.substring(
+                                            position.factoryAddress.length - 4
+                                          )}
+                                          <ExternalLink className="h-3 w-3" />
+                                        </a>
+                                      </div>
+
+                                      <div className="flex items-center gap-1 text-sm">
+                                        <span className="text-muted-foreground">
+                                          Controller:
+                                        </span>
+                                        <a
+                                          href={`https://sepolia.etherscan.io/address/${position.controllerAddress}`}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="flex items-center gap-1 text-primary hover:underline"
+                                        >
+                                          {position.controllerAddress.substring(
+                                            0,
+                                            6
+                                          )}
+                                          ...
+                                          {position.controllerAddress.substring(
+                                            position.controllerAddress.length -
+                                              4
                                           )}
                                           <ExternalLink className="h-3 w-3" />
                                         </a>

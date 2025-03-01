@@ -1,8 +1,10 @@
 export const allMarkets = [
   {
     ControllerAddress: "0x87e8B0a19087f0637AA9b27af2747F1CF1814182",
+    FactoryAddress: "0x452365460094825Cb1ee66ef9324C2C384ffe648",
     HedgeAddress: "0xe95DC2d13618c21b2805d22aa54dB95e1e9DeC02",
     RiskAddress: "0xdfe1468d30CEb9c17C36e3845EB0d77a2c7C6494",
+    MarketId: 1,
     HedgeEvent: "1000 Turkish Lira will be below $18 before maturity",
     RiskEvent: "1000 Turkish Lira will NOT be below $18 before maturity",
     HedgePayment: "20%",
@@ -13,8 +15,10 @@ export const allMarkets = [
   },
   {
     ControllerAddress: "0x87e8B0a19087f0637AA9b27af2747F1CF1814182",
+    FactoryAddress: "0x452365460094825Cb1ee66ef9324C2C384ffe648",
     HedgeAddress: "0xa5299DaD0529405E90146CAA6Af262fd9cEb3832",
     RiskAddress: "0x57Bb38Cc0ce49cbe1Dfe20e6e43bB286AE7Ebec6",
+    MarketId: 2,
     HedgeEvent: "1000 Turkish Lira will be below $15 before maturity",
     RiskEvent: "1000 Turkish Lira will NOT be below $15 before maturity",
     HedgePayment: "15%",

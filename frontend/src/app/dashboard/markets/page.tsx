@@ -44,6 +44,7 @@ import {
 } from "@/contract/markets";
 import { waitForTransactionReceipt } from "viem/actions";
 import { sepolia } from "viem/chains";
+import { ExternalLink } from "lucide-react";
 
 const Markets = () => {
   const { isConnected, address } = useAppKitAccount();
@@ -59,7 +60,10 @@ const Markets = () => {
   const [confetti, setConfetti] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [balanceTrigger, setBalanceTrigger] = useState<boolean>(false);
-  const [marketState, setMarketState] = useState("");
+  const [marketId, setMarketId] = useState("-");
+  const [vaultAddress, setVaultAddress] = useState("");
+  const [factoryAddress, setFactoryAddress] = useState("");
+  const [controllerAddress, setControllerAddress] = useState("");
 
   const { toast } = useToast();
 
@@ -225,6 +229,10 @@ const Markets = () => {
         if (market) {
           setEventDescription(market.HedgeEvent);
           setPayout(market.HedgePayment);
+          setMarketId(market.MarketId.toString());
+          setVaultAddress(selectedContract);
+          setFactoryAddress(market.FactoryAddress);
+          setControllerAddress(market.ControllerAddress);
         }
       } else {
         const market = allMarkets.find(
@@ -233,6 +241,10 @@ const Markets = () => {
         if (market) {
           setEventDescription(market.RiskEvent);
           setPayout(market.RiskPayment);
+          setMarketId(market.MarketId.toString());
+          setVaultAddress(selectedContract);
+          setFactoryAddress(market.FactoryAddress);
+          setControllerAddress(market.ControllerAddress);
         }
       }
     } else {
@@ -242,6 +254,10 @@ const Markets = () => {
           : baseEventDescriptionRisk
       );
       setPayout("");
+      setMarketId("-");
+      setVaultAddress("");
+      setFactoryAddress("");
+      setControllerAddress("");
     }
   }, [selectedContract, marketStrategy]);
 
@@ -421,6 +437,13 @@ const Markets = () => {
 
                             <div>
                               <p className="text-sm text-muted-foreground">
+                                Market Id
+                              </p>
+                              <p className="font-medium">{marketId}</p>
+                            </div>
+
+                            <div>
+                              <p className="text-sm text-muted-foreground">
                                 Oracle
                               </p>
                               <p className="font-medium">{oracle}</p>
@@ -450,6 +473,69 @@ const Markets = () => {
                                 Initial + {payout}
                               </p>
                             </div>
+
+                            {vaultAddress && (
+                              <div className="flex items-center gap-1 text-sm">
+                                <span className="text-muted-foreground">
+                                  Vault:
+                                </span>
+                                <a
+                                  href={`https://sepolia.etherscan.io/address/${vaultAddress}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-1 text-primary hover:underline"
+                                >
+                                  {vaultAddress.substring(0, 6)}
+                                  ...
+                                  {vaultAddress.substring(
+                                    vaultAddress.length - 4
+                                  )}
+                                  <ExternalLink className="h-3 w-3" />
+                                </a>
+                              </div>
+                            )}
+
+                            {factoryAddress && (
+                              <div className="flex items-center gap-1 text-sm">
+                                <span className="text-muted-foreground">
+                                  Factory:
+                                </span>
+                                <a
+                                  href={`https://sepolia.etherscan.io/address/${factoryAddress}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-1 text-primary hover:underline"
+                                >
+                                  {factoryAddress.substring(0, 6)}
+                                  ...
+                                  {factoryAddress.substring(
+                                    factoryAddress.length - 4
+                                  )}
+                                  <ExternalLink className="h-3 w-3" />
+                                </a>
+                              </div>
+                            )}
+
+                            {controllerAddress && (
+                              <div className="flex items-center gap-1 text-sm">
+                                <span className="text-muted-foreground">
+                                  Controller:
+                                </span>
+                                <a
+                                  href={`https://sepolia.etherscan.io/address/${controllerAddress}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-1 text-primary hover:underline"
+                                >
+                                  {controllerAddress.substring(0, 6)}
+                                  ...
+                                  {controllerAddress.substring(
+                                    controllerAddress.length - 4
+                                  )}
+                                  <ExternalLink className="h-3 w-3" />
+                                </a>
+                              </div>
+                            )}
                           </div>
 
                           <div className="space-y-4">
