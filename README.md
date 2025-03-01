@@ -1,9 +1,36 @@
-# Hedge Risk Standard
+# HedgeWave
 
-<img src="./images/simple-architecture.png" alt="Simple Architecture"/>
+## What Did we Build and Why?
 
-Based On ERC-4626 Vaults (https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/ERC4626.sol)
+We set out to create a protocol to Hedge Real Life Risks.
 
+We built a generalized Hedge/Risk Protocol that could be adapted for Insirance, Prediction Markets, or simply a way to Hedge against real life events
+
+### Our Example: 
+Hedge against Inflation of Turkish Lira.
+
+## How did we do it? - Risk/Hedge Protocol
+
+We built a protocol on top of ERC4626 primitive ((https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/ERC4626.sol))
+
+![alt text](images/vault.png)
+
+We then Combined Vaults to create our hedge/Risk
+
+![alt text](images/architecture.png.png)
+
+The Contract Architecture looks like this: 
+
+![alt text](images/contract.png)
+
+## Oracle
+
+We used Acurast TEEs to get real life data (not just on-chain price).
+
+![alt text](images/acurast.png)
+
+
+## How to run this locally: 
 Contract commands:
 
 ```
