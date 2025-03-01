@@ -8,6 +8,6 @@ rpc_url = "sepolia" # Use as the default RPC endpoint
 remappings = ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"]
 
 [rpc_endpoints]
-sepolia = "wss://ethereum-sepolia-rpc.publicnode.com"
-bob = "wss://bob-testnet.drpc.org"
+sepolia = "https://shape-sepolia.g.alchemy.com/v2/aqWK2KOu_IzHiVM1Dsg_ToWN9QoOSOWF"
+hedera_sepolia = "https://testnet.hashio.io/api"
 anvil = "http://127.0.0.1:8545"
