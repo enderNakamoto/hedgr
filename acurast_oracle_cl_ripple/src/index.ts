@@ -33,7 +33,7 @@ const API_URL = "http://apilayer.net/api/live";
 const API_KEY = _STD_.env.API_KEY;
 
 // Blockchain configuration from environment
-const RPC_URL = "https://bob-sepolia.rpc.gobob.xyz/";
+const RPC_URL = _STD_.env.RPC_URL;
 const PRIVATE_KEY = _STD_.env.PRIVATE_KEY;
 const CONTRACT_ADDRESS = _STD_.env.CONTRACT_ADDRESS;
 
