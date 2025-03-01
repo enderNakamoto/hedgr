@@ -17,7 +17,7 @@ We built a protocol on top of ERC4626 primitive ((https://github.com/OpenZeppeli
 
 We then Combined Vaults to create our hedge/Risk
 
-![alt text](images/architecture.png.png)
+![alt text](images/architecture.png)
 
 The Contract Architecture looks like this: 
 
@@ -28,6 +28,12 @@ The Contract Architecture looks like this:
 We used Acurast TEEs to get real life data (not just on-chain price).
 
 ![alt text](images/acurast.png)
+
+Funfact: 
+
+All the Acurast TEEs are actually processors of old phones. They are a Depin project
+
+![alt text](images/cluster.png)
 
 
 ## How to run this locally: 
