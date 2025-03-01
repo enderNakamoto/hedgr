@@ -1,5 +1,9 @@
 # HedgeWave
 
+## Note: 
+This project was not done in 24 hours, it was done over 5 days (within the hackathon timeframe), the first iteration of the project is here - https://github.com/enderNakamoto/bit_shield.
+
+
 ## Overview
 
 We set out to build a protocol that helps people hedge against real-world risks. Web3 needs applications that serve broader communities, not just on-chain PvP action for degens.
