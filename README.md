@@ -107,10 +107,39 @@ Market states:
 
 ### ETH Sepolia using RLUSD 
 
+* https://hedge-wave-ripple.vercel.app/
 
+* ASSET TOKEN - HUSD (Mock ERC20)
+    * 0xe101FB315a64cDa9944E570a7bFfaFE60b994b1D
+    * https://sepolia.etherscan.io/address/0xe101fb315a64cda9944e570a7bffafe60b994b1d#code
+
+* Controller 
+    * 0x87e8B0a19087f0637AA9b27af2747F1CF1814182
+    * https://sepolia.etherscan.io/address/0x87e8b0a19087f0637aa9b27af2747f1cf1814182#code
+
+* Factory 
+    * 0x452365460094825Cb1ee66ef9324C2C384ffe648
+    * https://sepolia.etherscan.io/address/0x452365460094825cb1ee66ef9324c2c384ffe648#code
+    
+#### Major Achievements
+   * Added a new oracle (Acurast) to the ecosystem that has access to web 2 data 
+   * Built a new Framework that allows creation of various DEFI protocols on top of it 
+        * Insurance 
+        * Prediction Markets 
+        * Hedging Risks 
+        * Hedging Depegs 
+   * Created various possible usecases for RLUSD     
+
+#### Future Plans 
+    * Create a generalized version of the protocol to be able to handle various hedging markets.
+    * Have better integration with Acurast to handle various Forex Markets 
+    * Research the possibility of building Insurance products based on this architecture. 
+   
 ### Hedera Testnet 
 
-* HUSD  
+* https://hedge-me-hedera.vercel.app/
+
+* ASSET TOKEN - HUSD (Mock ERC20)
     * 0x194543C05F72Dd85bECD13B00d3DdF3d77daEDD7
     * https://hashscan.io/testnet/contract/0.0.5640748?ps=1&pa=1&pr=1&pf=1
 
@@ -121,7 +150,7 @@ Market states:
 * Factory 
     * 0x40293e9Eec7ceB331617C86DA17f2801083Ed74F
     * https://hashscan.io/testnet/contract/0.0.5640752?ps=1&pa=1&pr=1&pf=1
-
+    
 #### Markets Deployed 
 
 * Market id 1
@@ -138,6 +167,21 @@ Market states:
     * address: hedgeVault 0x2317BaD11916612687BDc4596C709D1ae9266C58
     * strike price 15
 
+#### Major Achievements
+   * Added a new oracle (Acurast) to the ecosystem that has access to web 2 data 
+   * Built a new Framework that allows creation of various DEFI protocols on top of it 
+        * Insurance 
+        * Prediction Markets 
+        * Hedging Risks 
+
+#### Future Plans 
+    * HTS integration to work with USDC on Hedera and other native Hedera Tokens
+    * Disrupt Insurance market by bringing various automated Insurances on Hedera (Flight Insurance, Weather derivatives etc.)
+    * Open Source Project and write documentation on how to launch Insurance products.  
+
 ## U2U Network Testnet (Nebula)
+
+* https://hedhedge-u2u.vercel.app/
+
 
 ## Demo 
