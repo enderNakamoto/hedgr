@@ -46,7 +46,7 @@ Market states:
 
 * https://hedge-wave-ripple.vercel.app/
 
-* ASSET TOKEN - HUSD (Mock ERC20)
+* ASSET TOKEN - RLUSD
     * 0xe101FB315a64cDa9944E570a7bFfaFE60b994b1D
     * https://sepolia.etherscan.io/address/0xe101fb315a64cda9944e570a7bffafe60b994b1d#code
 
