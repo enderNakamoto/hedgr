@@ -179,9 +179,34 @@ Market states:
     * Disrupt Insurance market by bringing various automated Insurances on Hedera (Flight Insurance, Weather derivatives etc.)
     * Open Source Project and write documentation on how to launch Insurance products.  
 
-## U2U Network Testnet (Nebula)
+### U2U Network Testnet (Nebula)
 
 * https://hedhedge-u2u.vercel.app/
 
+* ASSET TOKEN 
+    * 0xCF23E2a7b247a5eae685Da0B66651048Dbc00fE8
+    * https://testnet.u2uscan.xyz/address/0xCF23E2a7b247a5eae685Da0B66651048Dbc00fE8
 
-## Demo 
+* Controller
+    * 0xA6A0f612A764B23CdEffac61Fe677380Ac7f5f32
+    * https://testnet.u2uscan.xyz/address/0xA6A0f612A764B23CdEffac61Fe677380Ac7f5f32
+
+* Factory
+    * 0x55ED163F184b162F708E9d79C303D65a573508AE
+    * https://testnet.u2uscan.xyz/address/0x55ED163F184b162F708E9d79C303D65a573508AE
+
+#### Deployed Markets
+
+* market id 1
+    * address: riskVault 0xcf09463De1e4B06719F48cA9E7Bd623919E4A1cC
+    * address: hedgeVault 0xbe6bB2230F9Eb6C94861Aad91d661FAd14D26452
+    * uint256: startTime 1740828600
+    * uint256: endTime 1741433400
+    * strike price 15
+
+* market id 2
+    * address: riskVault 0x52f41Fb065d6CFBd68c6BA2f06b2BFd0b711a27e
+    * address: hedgeVault 0x4919da093614EC2F829715454cBC355B212CFB30
+    * uint256: startTime 1740828600
+    * uint256: endTime 1741001400
+    * strike price 18
