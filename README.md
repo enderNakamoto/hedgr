@@ -1,6 +1,6 @@
 # HedgeWave
 
-## What Did we Build and Why?
+## Overview
 
 We set out to build a protocol that helps people hedge against real-world risks. Web3 needs applications that serve broader communities, not just on-chain PvP action for degens.
 
@@ -65,12 +65,16 @@ Market states:
         * Prediction Markets 
         * Hedging Risks 
         * Hedging Depegs 
-   * Created various possible usecases for RLUSD     
+   * Created various possible usecases for RLUSD
 
-#### Future Plans 
-    * Create a generalized version of the protocol to be able to handle various hedging markets.
-    * Have better integration with Acurast to handle various Forex Markets 
-    * Research the possibility of building Insurance products based on this architecture. 
+   
+
+ * **Future Plans**
+    - **Expand Market Events**: Add flight data, climate anomalies, commodity price hedging, and stablecoin de-pegging protection.  
+    - **Enable User-Generated Markets**: Allow users to create and customize hedge events with peer-to-peer speculation.  
+    - **Improve Infrastructure**: Expand to more chains, enhance liquidity incentives, and integrate automated settlements via oracles.  
+    - **Refine UI/UX**: Complete unfinished features, remove hardcoded elements, and optimize for mobile to ensure accessibility for as many Ripple users as possible.  
+    - **Grow Adoption**: Partner with fintech, DeFi protocols, and market makers while improving user experience.  
    
 ### Hedera Testnet 
 
