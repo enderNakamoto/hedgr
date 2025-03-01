@@ -1,0 +1,151 @@
+/* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /*body {*/
+      /* font-family: var(--font-quicksand), var(--font-roboto), sans-serif; */
+    /*}*/
+
+    :root {
+      /* Base */
+      --background: 210 40% 98%;
+      --foreground: 224 71% 4%;
+      
+      /* Card */
+      --card: 0 0% 100%;
+      --card-foreground: 224 71% 4%;
+      
+      /* Popover */
+      --popover: 0 0% 100%;
+      --popover-foreground: 224 71% 4%;
+      
+      /* Primary - Indigo */
+      --primary: 226 70% 55%;
+      --primary-foreground: 210 40% 98%;
+      
+      /* Secondary - Soft Gray */
+      --secondary: 220 14% 96%;
+      --secondary-foreground: 224 64% 10%;
+      
+      /* Muted */
+      --muted: 220 14% 96%;
+      --muted-foreground: 220 10% 46%;
+      
+      /* Accent - Soft Blue */
+      --accent: 210 100% 96%;
+      --accent-foreground: 226 70% 40%;
+      
+      /* Destructive - Red */
+      --destructive: 0 84% 60%;
+      --destructive-foreground: 210 40% 98%;
+      
+      /* Borders & UI */
+      --border: 220 13% 91%;
+      --input: 220 13% 91%;
+      --ring: 226 70% 55%;
+      
+      --radius: 0.5rem;
+      
+      /* Sidebar */
+      --sidebar-background: 210 40% 98%;
+      --sidebar-foreground: 224 10% 25%;
+      --sidebar-primary: 226 70% 55%;
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 210 30% 96%;
+      --sidebar-accent-foreground: 224 64% 10%;
+      --sidebar-border: 220 13% 91%;
+      --sidebar-ring: 226 70% 55%;
+    }
+    
+    .dark {
+      /* Base */
+      --background: 224 71% 4%;
+      --foreground: 210 40% 98%;
+      
+      /* Card */
+      --card: 224 71% 4%;
+      --card-foreground: 210 40% 98%;
+      
+      /* Popover */
+      --popover: 224 71% 4%;
+      --popover-foreground: 210 40% 98%;
+      
+      /* Primary - Indigo */
+      --primary: 226 70% 60%;
+      --primary-foreground: 210 40% 98%;
+      
+      /* Secondary */
+      --secondary: 215 28% 17%;
+      --secondary-foreground: 210 40% 98%;
+      
+      /* Muted */
+      --muted: 215 28% 17%;
+      --muted-foreground: 210 20% 70%;
+      
+      /* Accent - Indigo */
+      --accent: 226 70% 20%;
+      --accent-foreground: 210 40% 98%;
+      
+      /* Destructive */
+      --destructive: 0 62% 30%;
+      --destructive-foreground: 210 40% 98%;
+      
+      /* Borders & UI */
+      --border: 215 28% 17%;
+      --input: 215 28% 17%;
+      --ring: 226 70% 60%;
+      
+      /* Sidebar */
+      --sidebar-background: 224 71% 4%;
+      --sidebar-foreground: 210 40% 98%;
+      --sidebar-primary: 226 70% 60%;
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 215 28% 17%;
+      --sidebar-accent-foreground: 210 40% 98%;
+      --sidebar-border: 215 28% 17%;
+      --sidebar-ring: 226 70% 60%;
+    }
+  }
+
+  
+@layer components {
+    .random-float {
+      @apply absolute opacity-20 hover:opacity-100 transition-opacity duration-500;
+      animation: random-move 20s linear infinite;
+    }
+  }
+  
+  @layer utilities {
+    .animation-delay-1000 {
+      animation-delay: 1s;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-3000 {
+      animation-delay: 3s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  }
+  
+  @keyframes random-move {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(100px, 50px);
+    }
+    50% {
+      transform: translate(-50px, 100px);
+    }
+    75% {
+      transform: translate(-100px, -50px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
